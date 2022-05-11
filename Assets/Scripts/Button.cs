@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public static Button instance;
+    public ulong energyMultiplier = 1;
 
-    public int energyMultiplier = 1;
-    public int totalEnergy;
-
-    private void Awake()
+    public void AddEnergy(int energyToAdd)
     {
-        instance = this;
-    }
-
-    public void AddEnergy(int energy)
-    {
-        energy *= energyMultiplier;
-        totalEnergy += energy;
+        energyToAdd *= (int)energyMultiplier;
+        EnergyManager.instance.AddEnergy((ulong)energyToAdd);
     }
 }
