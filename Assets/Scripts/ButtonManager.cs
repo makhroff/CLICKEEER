@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ButtonManager : MonoBehaviour
 {
-    public ulong energyMultiplier = 1;
+    public int energyMultiplier = 1;
 
     public void AddEnergy(int energyToAdd)
     {
-        energyToAdd *= (int)energyMultiplier;
+        energyToAdd *= energyMultiplier;
         EnergyManager.instance.AddEnergy((ulong)energyToAdd);
     }
 }
